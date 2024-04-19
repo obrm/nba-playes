@@ -18,3 +18,11 @@ export type FavoriteContextType = {
 export type FavoriteProviderProps = {
 	children: ReactNode;
 };
+
+export type Response = {
+	data: Player[];
+	meta: {
+		next_cursor: number | null;
+		per_page: number;
+	};
+};

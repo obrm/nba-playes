@@ -1,8 +1,18 @@
+import { ToastContainer } from 'react-toastify';
+import { Navbar, PlayerList, FavoritesList } from './components';
+
 const App = () => {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div>
+      <ToastContainer />
+      <Navbar />
+      <div className="container mx-auto mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <PlayerList />
+          <FavoritesList />
+        </div>
+      </div>
+    </div>
   );
 };
 
