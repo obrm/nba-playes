@@ -1,7 +1,7 @@
-import { usePlayers } from '../context/PlayersContext';
+import { useGlobalPlayersContext } from '../hooks/useGlobalContext';
 
 const SearchBar = () => {
-  const { search, setSearch } = usePlayers();
+  const { search, setSearch } = useGlobalPlayersContext();
 
   return (
     <div className="form-control">

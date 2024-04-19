@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { FavoriteContextType, Player, ProviderProps } from '../types/types';
 
-export const FavoriteContext = createContext<FavoriteContextType>({
+const FavoriteContext = createContext<FavoriteContextType>({
   favorites: [],
   addToFavorites: () => { },
   removeFromFavorites: () => { },
@@ -35,3 +35,5 @@ export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
     </FavoriteContext.Provider>
   );
 };
+
+export default FavoriteContext;

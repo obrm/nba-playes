@@ -24,8 +24,14 @@ export type PlayersContextType = {
 	loading: boolean;
 	error: boolean;
 	search: string;
+	hasMore: boolean;
 	setSearch: React.Dispatch<React.SetStateAction<string>>;
 	loadMorePlayers: () => void;
+};
+
+export type UIContextType = {
+	showFavorites: boolean;
+	toggleShowFavorites: () => void;
 };
 
 export type Meta = {
@@ -36,4 +42,8 @@ export type Meta = {
 export type ApiResponse = {
 	data: Player[];
 	meta: Meta;
+};
+
+export type PlayerItemProps = {
+	player: Player;
 };
