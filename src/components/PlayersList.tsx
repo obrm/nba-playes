@@ -1,5 +1,5 @@
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useGlobalPlayersContext, useGlobalFavoriteContext } from '../hooks/useGlobalContext';
+import { useGlobalPlayersContext, useGlobalFavoriteContext } from '../hooks';
 
 import { PlayerItem, ToggleFavoritesBtn } from '.';
 
@@ -10,7 +10,7 @@ const PlayersList = () => {
   const allPlayers = players.filter(player => !favorites.some(item => item.id === player.id));
 
   return (
-    <div className={`container relative mx-auto sm:block ${showFavorites ? 'hidden' : 'block'}`}>
+    <div className={`container relative border border-gray-200 rounded-lg p-3 pt-5 -mt-5 mx-auto sm:block ${showFavorites ? 'hidden' : 'block'}`}>
       <h2 className="text-lg font-bold text-center mb-2">All Players</h2>
       <ToggleFavoritesBtn text='show favorites' />
       <InfiniteScroll

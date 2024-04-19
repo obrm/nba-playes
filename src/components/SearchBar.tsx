@@ -1,4 +1,4 @@
-import { useGlobalPlayersContext } from '../hooks/useGlobalContext';
+import { useGlobalPlayersContext } from '../hooks';
 
 const SearchBar = () => {
   const { search, setSearch } = useGlobalPlayersContext();

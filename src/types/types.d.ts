@@ -31,6 +31,11 @@ export type PlayersContextType = {
 	loadMorePlayers: () => void;
 };
 
+export type FavoritesThemeContextType = {
+	theme: string;
+	toggleTheme: () => void;
+};
+
 export type Meta = {
 	next_cursor: number | null;
 	per_page: number;
@@ -43,6 +48,7 @@ export type ApiResponse = {
 
 export type PlayerItemProps = {
 	player: Player;
+	theme?: string;
 };
 
 export type ToggleFavoritesButtonProps = {

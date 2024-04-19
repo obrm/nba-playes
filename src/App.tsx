@@ -1,12 +1,26 @@
+import { useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { Navbar, PlayersList, FavoritesList, Loader } from './components';
-import { useGlobalPlayersContext } from './hooks/useGlobalContext';
+import { useGlobalFavoriteContext, useGlobalPlayersContext, useGlobalThemeContext, useIsMobile } from './hooks';
 
 const App = () => {
   const { players, loading } = useGlobalPlayersContext();
+  const { showFavorites } = useGlobalFavoriteContext();
+
+  const { theme } = useGlobalThemeContext();
+
+  const isMobile = useIsMobile();
+
+  useEffect(() => {
+    if (theme === 'dark' && isMobile && showFavorites) {
+      document.body.style.backgroundColor = '#333';
+    } else {
+      document.body.style.backgroundColor = '#fff';
+    }
+  }, [theme, isMobile, showFavorites]);
 
   return (
-    <div>
+    <div className="main-container">
       <ToastContainer />
       <Navbar />
       <div className="container mx-auto mt-8">
