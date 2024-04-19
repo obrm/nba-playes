@@ -47,3 +47,7 @@ export type ApiResponse = {
 export type PlayerItemProps = {
 	player: Player;
 };
+
+export type ToggleFavoritesButtonProps = {
+	text: string;
+};
