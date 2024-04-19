@@ -1,5 +1,5 @@
 import { ToastContainer } from 'react-toastify';
-import { Navbar, PlayerList, FavoritesList, Loader } from './components';
+import { Navbar, PlayersList, FavoritesList, Loader } from './components';
 import { useGlobalPlayersContext } from './hooks/useGlobalContext';
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
           <Loader />
           : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <PlayerList />
+              <PlayersList />
               <FavoritesList />
             </div>
           )}

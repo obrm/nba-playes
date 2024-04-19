@@ -2,10 +2,10 @@ import { useGlobalFavoriteContext } from '../hooks/useGlobalContext';
 import { PlayerItem, ToggleFavoritesBtn } from './';
 
 const FavoritesList = () => {
-  const { favorites } = useGlobalFavoriteContext();
+  const { favorites, showFavorites } = useGlobalFavoriteContext();
 
   return (
-    <div className="container relative mx-auto">
+    <div className={`container relative mx-auto sm:block ${showFavorites ? 'block' : 'hidden'}`}>
       <h2 className="text-lg font-bold text-center mb-4">Favorite Players</h2>
       <ToggleFavoritesBtn text='go back' />
       {!favorites.length ? (

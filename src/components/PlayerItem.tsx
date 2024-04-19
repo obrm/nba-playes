@@ -7,10 +7,8 @@ import { useGlobalFavoriteContext } from '../hooks/useGlobalContext';
 const PlayerItem: React.FC<PlayerItemProps> = ({ player }) => {
   const { favorites, addToFavorites, removeFromFavorites } = useGlobalFavoriteContext();
 
-  // Check if the player is a favorite
   const isFavorite = (playerId: number) => favorites.some(item => item.id === playerId);
 
-  // Toggle favorite status of the player
   const toggleFavorite = (player: Player) => {
     if (isFavorite(player.id)) {
       removeFromFavorites(player.id);

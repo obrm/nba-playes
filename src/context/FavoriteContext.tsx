@@ -3,8 +3,10 @@ import { FavoriteContextType, Player, ProviderProps } from '../types/types';
 
 const FavoriteContext = createContext<FavoriteContextType>({
   favorites: [],
+  showFavorites: false,
   addToFavorites: () => { },
   removeFromFavorites: () => { },
+  toggleShowFavorites: () => { },
 });
 
 export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
@@ -12,10 +14,8 @@ export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
     const storedFavorites = localStorage.getItem('favorites');
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   });
+  const [showFavorites, setShowFavorites] = useState(false);
 
-  useEffect(() => {
-    localStorage.getItem('favorites');
-  }, []);
 
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -29,8 +29,12 @@ export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
     setFavorites(favorites.filter((player) => player.id !== playerId));
   };
 
+  const toggleShowFavorites = () => {
+    setShowFavorites(!showFavorites);
+  };
+
   return (
-    <FavoriteContext.Provider value={{ favorites, addToFavorites, removeFromFavorites }}>
+    <FavoriteContext.Provider value={{ favorites, showFavorites, addToFavorites, removeFromFavorites, toggleShowFavorites }}>
       {children}
     </FavoriteContext.Provider>
   );

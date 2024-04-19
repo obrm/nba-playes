@@ -11,8 +11,10 @@ export type Player = {
 
 export type FavoriteContextType = {
 	favorites: Player[];
+	showFavorites: boolean;
 	addToFavorites: (player: Player) => void;
 	removeFromFavorites: (playerId: number) => void;
+	toggleShowFavorites: () => void;
 };
 
 export type ProviderProps = {
@@ -27,11 +29,6 @@ export type PlayersContextType = {
 	hasMore: boolean;
 	setSearch: React.Dispatch<React.SetStateAction<string>>;
 	loadMorePlayers: () => void;
-};
-
-export type UIContextType = {
-	showFavorites: boolean;
-	toggleShowFavorites: () => void;
 };
 
 export type Meta = {
