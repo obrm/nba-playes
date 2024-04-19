@@ -16,7 +16,7 @@ const PlayerList = () => {
   }
 
   return (
-    <div className={`container relative mx-auto ${showFavorites ? 'hidden' : 'block'}`}>
+    <div className={`container relative mx-auto sm:block ${showFavorites ? 'hidden' : 'block'}`}>
       <h2 className="text-lg font-bold text-center mb-2">All Players</h2>
       <ToggleFavoritesBtn text='show favorites' />
       <InfiniteScroll

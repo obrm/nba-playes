@@ -5,7 +5,7 @@ const ToggleFavoritesBtn: React.FC<ToggleFavoritesButtonProps> = ({ text }) => {
   const { toggleShowFavorites } = useGlobalUIContext();
 
   return (
-    <div className="sm:hidden absolute top-1 right-4">
+    <div className="sm:hidden absolute right-4" style={{ top: '2.5px' }}>
       <button onClick={toggleShowFavorites} className="text-red-500 font-bold underline">
         {text}
       </button>
