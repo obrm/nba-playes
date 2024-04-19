@@ -17,7 +17,7 @@ const PlayersList = () => {
         dataLength={players.length}
         next={loadMorePlayers}
         hasMore={hasMore}
-        loader={players.length !== 0 && <div className='text-center'>Loading more players...</div>}
+        loader={players.length !== 0 && <div className='text-center mb-4'>Loading more players...</div>}
       >
         <ul className="list-none p-3 sm:p-0">
           {allPlayers.map((player) => (
