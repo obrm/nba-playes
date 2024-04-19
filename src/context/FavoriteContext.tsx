@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { FavoriteContextType, FavoriteProviderProps, Player } from '../types/types';
+import { FavoriteContextType, Player, ProviderProps } from '../types/types';
 
 export const FavoriteContext = createContext<FavoriteContextType>({
   favorites: [],
@@ -7,7 +7,7 @@ export const FavoriteContext = createContext<FavoriteContextType>({
   removeFromFavorites: () => { },
 });
 
-export const FavoriteProvider: React.FC<FavoriteProviderProps> = ({ children }) => {
+export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
   const [favorites, setFavorites] = useState<Player[]>(() => {
     const storedFavorites = localStorage.getItem('favorites');
     return storedFavorites ? JSON.parse(storedFavorites) : [];

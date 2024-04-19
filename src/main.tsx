@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import 'react-toastify/dist/ReactToastify.css';
-import { FavoriteProvider } from './context/FavoriteContext.tsx';
+import { FavoriteProvider, PlayersProvider } from './context';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <FavoriteProvider>
-      <App />
-    </FavoriteProvider>
+    <PlayersProvider>
+      <FavoriteProvider>
+        <App />
+      </FavoriteProvider>
+    </PlayersProvider>
   </React.StrictMode>,
 );

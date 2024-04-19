@@ -15,14 +15,25 @@ export type FavoriteContextType = {
 	removeFromFavorites: (playerId: number) => void;
 };
 
-export type FavoriteProviderProps = {
+export type ProviderProps = {
 	children: ReactNode;
 };
 
-export type Response = {
+export type PlayersContextType = {
+	players: Player[];
+	loading: boolean;
+	error: boolean;
+	search: string;
+	setSearch: React.Dispatch<React.SetStateAction<string>>;
+	loadMorePlayers: () => void;
+};
+
+export type Meta = {
+	next_cursor: number | null;
+	per_page: number;
+};
+
+export type ApiResponse = {
 	data: Player[];
-	meta: {
-		next_cursor: number | null;
-		per_page: number;
-	};
+	meta: Meta;
 };
