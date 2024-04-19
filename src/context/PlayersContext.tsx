@@ -8,7 +8,7 @@ const PlayersContext = createContext<PlayersContextType | undefined>(undefined);
 
 export const PlayersProvider: React.FC<ProviderProps> = ({ children }) => {
   const [players, setPlayers] = useState<Player[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
   const [search, setSearch] = useState<string>('');
   const [nextCursor, setNextCursor] = useState<number | null>(null);
