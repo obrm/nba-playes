@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { IoHeart, IoHeartOutline } from 'react-icons/io5';
 import { useGlobalFavoriteContext } from '../../hooks';
 import { ToggleFavoriteBtnProps } from '../../types/types';
@@ -6,18 +6,15 @@ import { ToggleFavoriteBtnProps } from '../../types/types';
 const ToggleFavoriteBtn: React.FC<ToggleFavoriteBtnProps> = ({ player }) => {
   const { favorites, addToFavorites, removeFromFavorites } = useGlobalFavoriteContext();
 
-  const isFavorite = useCallback(
-    (playerId: number) => favorites.some(item => item.id === playerId),
-    [favorites]
-  );
+  const isFavorite = (playerId: number) => favorites.some(item => item.id === playerId)
 
-  const toggleFavorite = useCallback(() => {
+  const toggleFavorite = () => {
     if (isFavorite(player.id)) {
       removeFromFavorites(player.id);
     } else {
       addToFavorites(player);
     }
-  }, [player, isFavorite, addToFavorites, removeFromFavorites]);
+  }
 
   return (
     <button
