@@ -73,13 +73,12 @@ export const PlayersProvider: React.FC<ProviderProps> = ({ children }) => {
   }, 300), [fetchPlayers]);
 
   useEffect(() => {
-    if (search.trim()) {
-      debouncedSearch(search);
-    }
+    debouncedSearch(search);
     return () => {
       debouncedSearch.cancel();
     };
   }, [search, debouncedSearch]);
+
 
   const loadMorePlayers = () => {
     if (nextCursor) {
