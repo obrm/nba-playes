@@ -4,8 +4,7 @@ import { useGlobalFavoriteContext, useIsMobile } from '../../hooks';
 const Navbar = () => {
   const isMobile = useIsMobile();
   const { showFavorites } = useGlobalFavoriteContext();
-  console.log(isMobile);
-  console.log(showFavorites);
+
   return (
     <div className="navbar bg-primary shadow-md">
       <div className="container mx-auto px-0">
