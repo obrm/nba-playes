@@ -69,17 +69,15 @@ Navigate through the application to search for NBA players, add or remove them f
 ![Main Layout With Search Mobile](./src/assets/screenshots/search_mobile.png)
 
 
-## Dependencies
+## Technologies
 
-- React
-- Axios for API requests
-- Lodash for utility functions
-- React Icons for scalable icons
-- React Infinite Scroll Component for infinite scroll
-- React Switch for toggling between themes
-- React Toastify for alerts
-- DaisyUI for UI components
-- Tailwind CSS for DaisyUI
+- **Vite**: Provides an extremely fast development environment with out-of-the-box features like Hot Module Replacement (HMR).
+- **TypeScript**: Ensures type safety, enhancing the development process by catching errors at compile time.
+- **React**: Facilitates the creation of interactive UIs.
+- **Tailwind CSS & DaisyUI**: Used for rapid UI development with a focus on design customization.
+- **Axios**: Handles API requests.
+- **Lodash**: Offers utility functions for common programming tasks.
+- **React Icons, React Infinite Scroll Component, React Switch, React Toastify**: Provide additional UI/UX enhancements.
 
 ## Contributing
 
