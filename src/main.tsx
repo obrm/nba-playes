@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <FavoriteProvider>
           <App />
         </FavoriteProvider>
-    </PlayersProvider>
+      </PlayersProvider>
     </FavoritesThemeProvider>
   </React.StrictMode>,
 );
