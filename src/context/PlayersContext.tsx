@@ -27,7 +27,6 @@ export const PlayersProvider: React.FC<ProviderProps> = ({ children }) => {
   const [hasMore, setHasMore] = useState<boolean>(true);
 
   const fetchPlayers = useCallback(async (page: number, searchQuery = search) => {
-    setLoading(true);
     setError(false);
 
     try {
