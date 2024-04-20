@@ -50,11 +50,22 @@ Navigate through the application to search for NBA players, add or remove them f
 
 ## Screenshots
 
+### Main Layout Desktop
 ![Main Layout Desktop](./src/assets/screenshots/main_desktop.png)
+
+### Main Dark Theme Layout Desktop
 ![Main Dark Theme Layout Desktop](./src/assets/screenshots/main_dark_theme_desktop.png)
+
+### Main Layout With Search Desktop
 ![Main Layout With Search Desktop](./src/assets/screenshots/search_desktop.png)
+
+### Main Layout Mobile
 ![Main Layout Mobile](./src/assets/screenshots/main_screen_mobile.png)
+
+### Favorites Page Mobile
 ![Favorites Page Mobile](./src/assets/screenshots/favoriets_mobile.png)
+
+### Main Layout With Search Mobile
 ![Main Layout With Search Mobile](./src/assets/screenshots/search_mobile.png)
 
 
