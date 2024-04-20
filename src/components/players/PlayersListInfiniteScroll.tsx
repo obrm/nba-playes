@@ -16,7 +16,7 @@ const PlayersListInfiniteScroll: React.FC = () => {
       loader={players.length !== 0 && <div className='text-center mb-4'>Loading more players...</div>}
     >
       <ul className="list-none p-3 sm:p-0">
-        {allPlayers.length === 0 && !error ? (<div className='text-center mt-8'>No more players...</div>) : allPlayers.map((player) => (
+        {allPlayers.length === 0 && !error ? (<div className='text-center mt-8'>No players found for this search term...</div>) : allPlayers.map((player) => (
           <PlayerItem key={player.id} player={player} />
         ))}
       </ul>
