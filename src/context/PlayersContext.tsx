@@ -1,8 +1,19 @@
-import React, { createContext, useState, useEffect, useCallback } from 'react';
+import {
+  createContext,
+  useState,
+  useEffect,
+  useCallback
+} from 'react';
 import axios from 'axios';
 import debounce from 'lodash/debounce';
 import { toast } from 'react-toastify';
-import { ApiResponse, Player, PlayersContextType, ProviderProps } from '../types/types';
+
+import {
+  ApiResponse,
+  Player,
+  PlayersContextType,
+  ProviderProps
+} from '../types/types';
 
 const PlayersContext = createContext<PlayersContextType | undefined>(undefined);
 
@@ -14,7 +25,7 @@ export const PlayersProvider: React.FC<ProviderProps> = ({ children }) => {
   const [nextCursor, setNextCursor] = useState<number | null>(null);
   const [hasMore, setHasMore] = useState<boolean>(true);
 
-  const fetchPlayers = useCallback(async (page: number, searchQuery?: string) => {
+  const fetchPlayers = useCallback(async (page: number, searchQuery = search) => {
     setLoading(true);
     setError(false);
 
@@ -42,26 +53,35 @@ export const PlayersProvider: React.FC<ProviderProps> = ({ children }) => {
 
     } catch (error: any) {
       setError(true);
-      toast.error('Error fetching data: ' + (error.response?.data?.message || error.message));
+      toast.error(`Error fetching data: ${error.response?.data?.message || error.message}`, {
+        position: "top-center"
+      });
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [search]);
 
   useEffect(() => {
-    fetchPlayers(1);
+    if (!search) {
+      fetchPlayers(1);
+    }
   }, []);
 
   const debouncedSearch = useCallback(debounce((searchQuery: string) => {
     fetchPlayers(1, searchQuery);
-  }, 300), []);
+  }, 300), [fetchPlayers]);
 
   useEffect(() => {
-    debouncedSearch(search);
+    if (search.trim()) {
+      debouncedSearch(search);
+    }
+    return () => {
+      debouncedSearch.cancel();
+    };
   }, [search, debouncedSearch]);
 
   const loadMorePlayers = () => {
-    if (nextCursor) {      
+    if (nextCursor) {
       fetchPlayers(nextCursor);
     }
   };

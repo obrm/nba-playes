@@ -20,12 +20,12 @@ const PlayersList = () => {
         loader={players.length !== 0 && <div className='text-center mb-4'>Loading more players...</div>}
       >
         <ul className="list-none p-3 sm:p-0">
-          {allPlayers.map((player) => (
+          {allPlayers.length === 0 && !error ? (<div className='text-center mt-8'>No more players...</div>) : allPlayers.map((player) => (
             <PlayerItem key={player.id} player={player} />
           ))}
         </ul>
       </InfiniteScroll>
-      {error && <div className="text-red-500 text-center">Error loading players</div>}
+      {error && <div className="text-red-500 text-center mt-8">Error loading players</div>}
     </div>
   );
 };

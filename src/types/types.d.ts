@@ -50,7 +50,7 @@ export type ApiResponse = {
 export type PlayerItemProps = {
 	player: Player;
 	isDarkTheme?: boolean;
-	theme: string;
+	theme?: string;
 };
 
 export type ToggleFavoritesButtonProps = {
