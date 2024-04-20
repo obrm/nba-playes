@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
+import throttle from 'lodash/throttle';
 
-function useIsMobile(): boolean {
-	const [isMobile, setIsMobile] = useState<boolean>(() => window.innerWidth <= 767);
+function useIsMobile(maxWidth: number = 767): boolean {
+	const [isMobile, setIsMobile] = useState<boolean>(() => window.innerWidth <= maxWidth);
 
 	useEffect(() => {
-		function handleResize() {
-			setIsMobile(window.innerWidth <= 767);
-		}
+		const handleResize = throttle(() => {
+			setIsMobile(window.innerWidth <= maxWidth);
+		}, 100);
 
 		window.addEventListener('resize', handleResize);
-
-		handleResize();
-
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
+		return () => {
+			handleResize.cancel();
+			window.removeEventListener('resize', handleResize);
+		};
+	}, [maxWidth]);
 
 	return isMobile;
 }
