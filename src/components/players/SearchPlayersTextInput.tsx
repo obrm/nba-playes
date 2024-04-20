@@ -1,7 +1,7 @@
 import { useGlobalPlayersContext } from '../../hooks';
 import { TextInputProps } from '../../types/types';
 
-const TextInput: React.FC<TextInputProps> = () => {
+const SearchPlayersTextInput: React.FC<TextInputProps> = () => {
   const { search, setSearch } = useGlobalPlayersContext();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,4 +19,4 @@ const TextInput: React.FC<TextInputProps> = () => {
   );
 };
 
-export default TextInput;
+export default SearchPlayersTextInput;

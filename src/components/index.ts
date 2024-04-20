@@ -1,8 +1,8 @@
 export { default as PlayersListContainer } from './players/PlayersListContainer';
 export { default as FavoritesListContainer } from './favorites/FavoritesListContainer';
 export { default as FavoritesList } from './favorites/FavoritesList';
-export { default as SearchBar } from './forms/SearchBar';
-export { default as TextInput } from './forms/TextInput';
+export { default as SearchBar } from './layout/SearchBar';
+export { default as SearchPlayersTextInput } from './players/SearchPlayersTextInput';
 export { default as Title } from './layout/Title';
 export { default as ThemeSwitchBtn } from './ui/ThemeSwitchBtn';
 export { default as PlayersListInfiniteScroll } from './players/PlayersListInfiniteScroll';

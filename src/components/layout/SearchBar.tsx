@@ -1,10 +1,10 @@
-import { TextInput } from '..';
+import { SearchPlayersTextInput } from '..';
 
 const SearchBar = () => {
 
   return (
     <div className="form-control">
-      <TextInput placeholder="Search" />
+      <SearchPlayersTextInput placeholder="Search" />
     </div>
   );
 };
