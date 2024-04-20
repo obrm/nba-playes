@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 
 import {
@@ -10,10 +10,13 @@ import {
 
 import {
   Navbar,
-  PlayersList,
-  FavoritesList,
   Loader
 } from './components';
+import LoaderScreen from './components/LoaderScreen';
+
+const PlayersList = lazy(() => import('./components/PlayersList'));
+const FavoritesList = lazy(() => import('./components/FavoritesList'));
+
 
 const App = () => {
   const { players, loading } = useGlobalPlayersContext();
@@ -30,22 +33,25 @@ const App = () => {
     }
   }, [isDarkTheme, isMobile, isShowFavorites]);
 
+  if (loading && !players.length) {
+    return <LoaderScreen />;
+  }
+
   return (
     <div className="main-container">
       <ToastContainer />
       <Navbar />
       <div className="container mx-auto mt-8">
-        {loading && !players.length ?
-          <Loader />
-          : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <PlayersList />
-              <FavoritesList />
-            </div>
-          )}
+        <Suspense fallback={<Loader />}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <PlayersList />
+            <FavoritesList />
+          </div>
+        </Suspense>
       </div>
     </div>
   );
+
 };
 
 export default App;
