@@ -61,6 +61,10 @@ export type TitleProps = {
 	title: string;
 };
 
+export type ToggleFavoriteBtnProps = {
+	player: Player;
+};
+
 export type ToggleFavoritesButtonProps = {
 	text: string;
 };

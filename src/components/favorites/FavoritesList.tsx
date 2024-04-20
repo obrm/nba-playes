@@ -6,7 +6,7 @@ const FavoritesList: React.FC = () => {
   const { isDarkTheme, theme } = useGlobalThemeContext();
 
   if (!favorites.length) {
-    return <div className={`text-center ${isDarkTheme ? 'text-gray-300' : 'text-gray-500'} mt-4`}>No favorites added yet.</div>;
+    return <div className={`text-center mt-4 ${isDarkTheme ? 'text-gray-300' : 'text-gray-500'}`}>No favorites added yet.</div>;
   }
   return (
     <ul className="list-none p-3 sm:p-0">
