@@ -4,7 +4,7 @@ import { IoHeart, IoHeartOutline } from 'react-icons/io5';
 import { Player, PlayerItemProps } from '../types/types';
 import { useGlobalFavoriteContext } from '../hooks';
 
-const PlayerItem: React.FC<PlayerItemProps> = ({ player, theme }) => {
+const PlayerItem: React.FC<PlayerItemProps> = ({ player, isDarkTheme, theme }) => {
   const { favorites, addToFavorites, removeFromFavorites } = useGlobalFavoriteContext();
 
   const isFavorite = (playerId: number) => favorites.some(item => item.id === playerId);
@@ -19,7 +19,7 @@ const PlayerItem: React.FC<PlayerItemProps> = ({ player, theme }) => {
 
   return (
     <div
-      className={`bg-white ${theme === 'dark' ? 'hover:bg-zinc-800' : 'hover:bg-gray-100'} border border-gray-200 rounded my-2 p-4 flex justify-between items-center shadow-sm hover:shadow transition-shadow duration-300 ease-in-out favorites-${theme}`}
+      className={`bg-white ${isDarkTheme ? 'hover:bg-zinc-800' : 'hover:bg-gray-100'} border border-gray-200 rounded my-2 p-4 flex justify-between items-center shadow-sm hover:shadow transition-shadow duration-300 ease-in-out favorites-${theme}`}
     >
       <div>
         {player.first_name} {player.last_name} - {player.team.full_name}

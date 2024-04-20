@@ -4,9 +4,7 @@ import { PlayerItem, ToggleFavoritesBtn } from './';
 
 const FavoritesList = () => {
   const { favorites, isShowFavorites } = useGlobalFavoriteContext();
-  const { theme, toggleTheme } = useGlobalThemeContext();
-
-  const isDarkTheme = theme === 'dark';
+  const { isDarkTheme, theme, toggleTheme } = useGlobalThemeContext();
 
   return (
     <div className={`container relative pt-5 p-3 rounded-lg -mt-5 mx-auto sm:block ${isShowFavorites ? 'block' : 'hidden'} favorites-${theme}`}>
@@ -29,11 +27,11 @@ const FavoritesList = () => {
       </div>
       <ToggleFavoritesBtn text='Go Back' />
       {!favorites.length ? (
-        <div className={`text-center ${theme === 'dark' ? 'text-gray-300' : 'text-gray-500'} mt-4`}>No favorites added yet.</div>
+        <div className={`text-center ${isDarkTheme ? 'text-gray-300' : 'text-gray-500'} mt-4`}>No favorites added yet.</div>
       ) : (
         <ul className="list-none p-3 sm:p-0">
           {favorites.map((player) => (
-            <PlayerItem key={player.id} player={player} theme={theme} />
+            <PlayerItem key={player.id} player={player} isDarkTheme={isDarkTheme} theme={theme} />
           ))}
         </ul>
       )}

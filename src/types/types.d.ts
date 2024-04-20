@@ -33,6 +33,7 @@ export type PlayersContextType = {
 
 export type FavoritesThemeContextType = {
 	theme: string;
+	isDarkTheme: boolean;
 	toggleTheme: () => void;
 };
 
@@ -48,7 +49,8 @@ export type ApiResponse = {
 
 export type PlayerItemProps = {
 	player: Player;
-	theme?: string;
+	isDarkTheme?: boolean;
+	theme: string;
 };
 
 export type ToggleFavoritesButtonProps = {

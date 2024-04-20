@@ -18,17 +18,17 @@ import {
 const App = () => {
   const { players, loading } = useGlobalPlayersContext();
   const { isShowFavorites } = useGlobalFavoriteContext();
-  const { theme } = useGlobalThemeContext();
+  const { isDarkTheme } = useGlobalThemeContext();
 
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    if (theme === 'dark' && isMobile && isShowFavorites) {
+    if (isDarkTheme && isMobile && isShowFavorites) {
       document.body.style.backgroundColor = '#333';
     } else {
       document.body.style.backgroundColor = '#fff';
     }
-  }, [theme, isMobile, isShowFavorites]);
+  }, [isDarkTheme, isMobile, isShowFavorites]);
 
   return (
     <div className="main-container">
