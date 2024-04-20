@@ -5,12 +5,12 @@ import { PlayerItem, ToggleFavoritesBtn } from '.';
 
 const PlayersList = () => {
   const { players, error, loadMorePlayers, hasMore } = useGlobalPlayersContext();
-  const { favorites, showFavorites } = useGlobalFavoriteContext();
+  const { favorites, isShowFavorites } = useGlobalFavoriteContext();
 
   const allPlayers = players.filter(player => !favorites.some(item => item.id === player.id));
 
   return (
-    <div className={`container relative bg-white border border-gray-200 rounded-lg p-3 pt-5 -mt-5 mx-auto sm:block ${showFavorites ? 'hidden' : 'block'}`}>
+    <div className={`container relative bg-white border border-gray-200 rounded-lg p-3 pt-5 -mt-5 mx-auto sm:block ${isShowFavorites ? 'hidden' : 'block'}`}>
       <h2 className="text-lg font-bold text-center mb-2">All Players</h2>
       <ToggleFavoritesBtn text='show favorites' />
       <InfiniteScroll

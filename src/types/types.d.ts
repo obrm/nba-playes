@@ -11,7 +11,7 @@ export type Player = {
 
 export type FavoriteContextType = {
 	favorites: Player[];
-	showFavorites: boolean;
+	isShowFavorites: boolean;
 	addToFavorites: (player: Player) => void;
 	removeFromFavorites: (playerId: number) => void;
 	toggleShowFavorites: () => void;
