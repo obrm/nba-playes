@@ -20,18 +20,18 @@ const FavoritesList = lazy(() => import('./components/FavoritesList'));
 
 const App = () => {
   const { players, loading } = useGlobalPlayersContext();
-  const { isShowFavorites } = useGlobalFavoriteContext();
+  const { showFavorites } = useGlobalFavoriteContext();
   const { isDarkTheme } = useGlobalThemeContext();
 
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    if (isDarkTheme && isMobile && isShowFavorites) {
+    if (isDarkTheme && isMobile && showFavorites) {
       document.body.style.backgroundColor = '#333';
     } else {
       document.body.style.backgroundColor = '#fff';
     }
-  }, [isDarkTheme, isMobile, isShowFavorites]);
+  }, [isDarkTheme, isMobile, showFavorites]);
 
   if (loading && !players.length) {
     return <LoaderScreen />;

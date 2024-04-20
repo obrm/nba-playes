@@ -3,11 +3,11 @@ import { useGlobalFavoriteContext, useGlobalThemeContext } from '../hooks';
 import { PlayerItem, ToggleFavoritesBtn } from './';
 
 const FavoritesList = () => {
-  const { favorites, isShowFavorites } = useGlobalFavoriteContext();
+  const { favorites, showFavorites } = useGlobalFavoriteContext();
   const { isDarkTheme, theme, toggleTheme } = useGlobalThemeContext();
 
   return (
-    <div className={`container relative pt-5 p-3 rounded-lg -mt-5 mx-auto sm:block ${isShowFavorites ? 'block' : 'hidden'} favorites-${theme}`}>
+    <div className={`container relative pt-5 p-3 rounded-lg -mt-5 mx-auto sm:block ${showFavorites ? 'block' : 'hidden'} favorites-${theme}`}>
       <h2 className="text-lg font-bold text-center mb-4">Favorite Players</h2>
       <div className="flex justify-center items-center mb-4">
         <label htmlFor="theme-switch" className='absolute sm:top-5 sm:right-5 sm:left-auto top-6 left-5'>

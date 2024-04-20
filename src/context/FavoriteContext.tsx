@@ -1,43 +1,51 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useCallback, useMemo } from 'react';
 import { FavoriteContextType, Player, ProviderProps } from '../types/types';
 
-const FavoriteContext = createContext<FavoriteContextType>({
-  favorites: [],
-  isShowFavorites: false,
-  addToFavorites: () => { },
-  removeFromFavorites: () => { },
-  toggleShowFavorites: () => { },
-});
+const FavoriteContext = createContext<FavoriteContextType | undefined>(undefined);
 
 export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
   const [favorites, setFavorites] = useState<Player[]>(() => {
     const storedFavorites = localStorage.getItem('favorites');
-    return storedFavorites ? JSON.parse(storedFavorites) : [];
+    try {
+      return storedFavorites ? JSON.parse(storedFavorites) : [];
+    } catch (error) {
+      console.error('Failed to parse favorites from localStorage:', error);
+      return [];
+    }
   });
-  const [isShowFavorites, setShowFavorites] = useState(false);
 
+  const [showFavorites, setShowFavorites] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  const addToFavorites = (player: Player) => {
-    setFavorites([...favorites, player]);
-  };
+  const addToFavorites = useCallback((player: Player) => {
+    setFavorites((prevFavorites) => [...prevFavorites, player]);
+  }, []);
 
-  const removeFromFavorites = (playerId: number) => {
-    setFavorites(favorites.filter((player) => player.id !== playerId));
-  };
+  const removeFromFavorites = useCallback((playerId: number) => {
+    setFavorites((prevFavorites) => prevFavorites.filter(player => player.id !== playerId));
+  }, []);
 
-  const toggleShowFavorites = () => {
-    setShowFavorites(!isShowFavorites);
-  };
+  const toggleShowFavorites = useCallback(() => {
+    setShowFavorites((prevShowFavorites) => !prevShowFavorites);
+  }, []);
+
+  const providerValue = useMemo(() => ({
+    favorites,
+    showFavorites,
+    addToFavorites,
+    removeFromFavorites,
+    toggleShowFavorites
+  }), [favorites, showFavorites]);
 
   return (
-    <FavoriteContext.Provider value={{ favorites, isShowFavorites, addToFavorites, removeFromFavorites, toggleShowFavorites }}>
+    <FavoriteContext.Provider value={providerValue}>
       {children}
     </FavoriteContext.Provider>
   );
+
 };
 
 export default FavoriteContext;

@@ -92,13 +92,12 @@ export const PlayersProvider: React.FC<ProviderProps> = ({ children }) => {
     loading,
     error,
     search,
-    setSearch,
     loadMorePlayers,
     hasMore
-  }), [players, loading, error, search, setSearch, loadMorePlayers, hasMore]);
+  }), [players, loading, error, search, loadMorePlayers, hasMore]);
 
   return (
-    <PlayersContext.Provider value={providerValue}>
+    <PlayersContext.Provider value={{ ...providerValue, setSearch }}>
       {children}
     </PlayersContext.Provider>
   );

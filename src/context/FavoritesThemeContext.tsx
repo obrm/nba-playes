@@ -1,5 +1,4 @@
-import React, { createContext, useState, useEffect, useMemo } from 'react';
-
+import React, { createContext, useState, useEffect, useMemo, useCallback } from 'react';
 import { ProviderProps, FavoritesThemeContextType } from '../types/types';
 
 const FavoritesThemeContext = createContext<FavoritesThemeContextType | undefined>(undefined);
@@ -13,19 +12,21 @@ export const FavoritesThemeProvider: React.FC<ProviderProps> = ({ children }) =>
     localStorage.setItem('favoritesListIsDark', isDarkTheme.toString());
   }, [theme, isDarkTheme]);
 
-  const toggleTheme = () => {
-    setTheme(isDarkTheme ? 'light' : 'dark');
-    setIsDarkTheme(!isDarkTheme);
-  };
+  const toggleTheme = useCallback(() => {
+    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    setIsDarkTheme(prevIsDarkTheme => !prevIsDarkTheme);
+  }, []);
 
-  const providerValue = useMemo(() => ({ theme, isDarkTheme, toggleTheme }), [theme, isDarkTheme, toggleTheme]);
+  const providerValue = useMemo(() => ({
+    theme,
+    isDarkTheme
+  }), [theme, isDarkTheme, toggleTheme]);
 
   return (
-    <FavoritesThemeContext.Provider value={providerValue}>
+    <FavoritesThemeContext.Provider value={{ ...providerValue, toggleTheme }}>
       {children}
     </FavoritesThemeContext.Provider>
   );
-
 };
 
 export default FavoritesThemeContext;
