@@ -53,6 +53,10 @@ export type PlayerItemProps = {
 	theme?: string;
 };
 
+export type TextInputProps = {
+	placeholder: string;
+};
+
 export type ToggleFavoritesButtonProps = {
 	text: string;
 };

@@ -1,17 +1,10 @@
-import { useGlobalPlayersContext } from '../hooks';
+import { TextInput } from './';
 
 const SearchBar = () => {
-  const { search, setSearch } = useGlobalPlayersContext();
 
   return (
     <div className="form-control">
-      <input
-        type="text"
-        placeholder="Search"
-        className="input input-bordered"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      <TextInput placeholder="Search" />
     </div>
   );
 };
