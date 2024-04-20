@@ -1,6 +1,6 @@
 # NBA Players
 
-NBA Players is a React-based web application that leverages the [BallDontLie API](https://www.balldontlie.io) to display NBA player statistics and allows users to search for players, mark their favorites, and manage these preferences in a visually appealing interface.
+NBA Players is a React-based web application that leverages the [BallDontLie API](https://www.balldontlie.io) to display NBA player statistics and allows users to search for players, mark their favorites, and manage these preferences in a visually appealing interface. You can view the live site here: [NBA Players Live Site](https://obrm-nba-players.netlify.app).
 
 ## Features
 
