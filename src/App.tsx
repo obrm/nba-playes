@@ -41,7 +41,7 @@ const App = () => {
     <div className="main-container">
       <ToastContainer />
       <Navbar />
-      <div className="container mx-auto mt-8">
+      <div className="container mx-auto mt-8 sm:px-0 px-2">
         <Suspense fallback={<Loader />}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <PlayersList />
