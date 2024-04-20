@@ -1,6 +1,6 @@
 
 import logo from '../assets/logo.png';
-import SearchBar from './SearchBar';
+import SearchBar from '../forms/SearchBar';
 
 const Navbar = () => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import { IoHeart, IoHeartOutline } from 'react-icons/io5';
 
-import { Player, PlayerItemProps } from '../types/types';
-import { useGlobalFavoriteContext } from '../hooks';
+import { Player, PlayerItemProps } from '../../types/types';
+import { useGlobalFavoriteContext } from '../../hooks';
 
 const PlayerItem: React.FC<PlayerItemProps> = ({ player, isDarkTheme, theme }) => {
   const { favorites, addToFavorites, removeFromFavorites } = useGlobalFavoriteContext();

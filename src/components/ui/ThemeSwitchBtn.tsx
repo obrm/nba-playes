@@ -1,5 +1,5 @@
 import Switch from 'react-switch';
-import { useGlobalThemeContext } from '../hooks';
+import { useGlobalThemeContext } from '../../hooks';
 
 const ThemeSwitchBtn: React.FC = () => {
   const { isDarkTheme, toggleTheme } = useGlobalThemeContext();

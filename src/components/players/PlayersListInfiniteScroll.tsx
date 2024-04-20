@@ -1,6 +1,6 @@
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useGlobalFavoriteContext, useGlobalPlayersContext } from '../hooks';
-import { PlayerItem } from './';
+import { useGlobalFavoriteContext, useGlobalPlayersContext } from '../../hooks';
+import { PlayerItem } from '..';
 
 const PlayersListInfiniteScroll: React.FC = () => {
   const { players, error, loadMorePlayers, hasMore } = useGlobalPlayersContext();

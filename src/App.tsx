@@ -12,10 +12,10 @@ import {
   Navbar,
   Loader
 } from './components';
-import LoaderScreen from './components/LoaderScreen';
+import LoaderScreen from './components/ui/LoaderScreen';
 
-const PlayersList = lazy(() => import('./components/PlayersListContainer'));
-const FavoritesList = lazy(() => import('./components/FavoritesListContainer'));
+const PlayersList = lazy(() => import('./components/players/PlayersListContainer'));
+const FavoritesList = lazy(() => import('./components/favorites/FavoritesListContainer'));
 
 
 const App = () => {

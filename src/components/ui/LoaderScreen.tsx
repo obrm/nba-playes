@@ -1,5 +1,5 @@
 import { ToastContainer } from 'react-toastify';
-import { Loader, Navbar } from './';
+import { Loader, Navbar } from '..';
 
 const LoaderScreen: React.FC = () => {
   return (

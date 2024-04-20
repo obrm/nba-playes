@@ -1,4 +1,4 @@
-import { TextInput } from './';
+import { TextInput } from '..';
 
 const SearchBar = () => {
 

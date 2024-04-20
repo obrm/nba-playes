@@ -1,6 +1,6 @@
-import { useGlobalPlayersContext, useGlobalFavoriteContext } from '../hooks';
+import { useGlobalPlayersContext, useGlobalFavoriteContext } from '../../hooks';
 
-import { PlayersListInfiniteScroll, ToggleFavoritesBtn, Title } from '.';
+import { PlayersListInfiniteScroll, ToggleFavoritesBtn, Title } from '..';
 
 const PlayersListContainer = () => {
   const { error } = useGlobalPlayersContext();

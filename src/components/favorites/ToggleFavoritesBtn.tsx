@@ -1,8 +1,8 @@
-import { useGlobalFavoriteContext } from '../hooks';
-import { ToggleFavoritesButtonProps } from '../types/types';
+import { useGlobalFavoriteContext } from '../../hooks';
+import { ToggleFavoritesButtonProps } from '../../types/types';
 
 const ToggleFavoritesBtn: React.FC<ToggleFavoritesButtonProps> = ({ text }) => {
-  const { toggleShowFavorites } = useGlobalFavoriteContext()
+  const { toggleShowFavorites } = useGlobalFavoriteContext();
 
   return (
     <div className="sm:hidden absolute right-4" style={{ top: '21.5px' }}>

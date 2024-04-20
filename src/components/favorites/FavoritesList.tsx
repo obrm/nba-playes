@@ -1,5 +1,5 @@
-import { useGlobalFavoriteContext, useGlobalThemeContext } from '../hooks';
-import { PlayerItem } from './';
+import { useGlobalFavoriteContext, useGlobalThemeContext } from '../../hooks';
+import { PlayerItem } from '..';
 
 const FavoritesList: React.FC = () => {
   const { favorites } = useGlobalFavoriteContext();
