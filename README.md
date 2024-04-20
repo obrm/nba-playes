@@ -1,30 +1,79 @@
-# React + TypeScript + Vite
+# NBA Players
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NBA Players is a React-based web application that leverages the [BallDontLie API](https://www.balldontlie.io) to display NBA player statistics and allows users to search for players, mark their favorites, and manage these preferences in a visually appealing interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Player Search**: Search for NBA players using the BallDontLie API.
+- **Favorite Players**: Users can mark players as favorites and manage this list.
+- **Responsive Design**: Optimized for both desktop and mobile view.
+- **Infinite Scrolling**: Load more players dynamically as you scroll.
+- **Dark Mode Toggle**: Users can switch between light and dark themes in the favorites section.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To get started with NBA Players, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone the Repository**
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+   ```bash
+   git clone https://github.com/obrm/nba-playes.git
+   cd NBA Players
+   ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. **Install Dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Environment Variables**
+
+   Create a `.env` file at the root of your project and add the following:
+
+   ```plaintext
+   VITE_NBA_API_KEY=your_api_key_here
+   VITE_API_URL=https://api.balldontlie.io/v1
+   ```
+
+   Replace `your_api_key_here` with your actual BallDontLie API key.
+
+4. **Run the Application**
+
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+
+Navigate through the application to search for NBA players, add or remove them from your favorites, and toggle between the light and dark themes in the favorites section. Use the responsive layout to access the app on any device.
+
+## Screenshots
+
+![Main Layout Desktop](./src/assets/screenshots/main_desktop.png)
+![Main Dark Theme Layout Desktop](./src/assets/screenshots/main_dark_theme_desktop.png)
+![Main Layout With Search Desktop](./src/assets/screenshots/search_desktop.png)
+![Main Layout Mobile](./src/assets/screenshots/main_screen_mobile.png)
+![Favorites Page Mobile](./src/assets/screenshots/favoriets_mobile.png)
+![Main Layout With Search Mobile](./src/assets/screenshots/search_mobile.png)
+
+
+## Dependencies
+
+- React
+- Axios for API requests
+- Lodash for utility functions
+- React Icons for scalable icons
+- React Infinite Scroll Component for infinite scroll
+- React Switch for toggling between themes
+- React Toastify for alerts
+- DaisyUI for UI components
+- Tailwind CSS for DaisyUI
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request with your updates.
+
+## License
+
+`NBA Players` is released under the MIT License. 
