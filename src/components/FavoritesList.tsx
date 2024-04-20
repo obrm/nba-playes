@@ -29,7 +29,7 @@ const FavoritesList = () => {
       </div>
       <ToggleFavoritesBtn text='Go Back' />
       {!favorites.length ? (
-        <div className="text-center text-gray-500 mt-4">No favorites added yet.</div>
+        <div className={`text-center ${theme === 'dark' ? 'text-gray-300' : 'text-gray-500'} mt-4`}>No favorites added yet.</div>
       ) : (
         <ul className="list-none p-3 sm:p-0">
           {favorites.map((player) => (
