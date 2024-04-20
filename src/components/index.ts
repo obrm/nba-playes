@@ -1,7 +1,11 @@
-export { default as PlayersList } from './PlayersList';
+export { default as PlayersListContainer } from './PlayersListContainer';
+export { default as FavoritesListContainer } from './FavoritesListContainer';
 export { default as FavoritesList } from './FavoritesList';
 export { default as SearchBar } from './SearchBar';
 export { default as TextInput } from './TextInput';
+export { default as Title } from './Title';
+export { default as ThemeSwitchBtn } from './ThemeSwitchBtn';
+export { default as PlayersListInfiniteScroll } from './PlayersListInfiniteScroll';
 export { default as Navbar } from './Navbar';
 export { default as PlayerItem } from './PlayerItem';
 export { default as Loader } from './Loader';

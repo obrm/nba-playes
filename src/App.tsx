@@ -14,8 +14,8 @@ import {
 } from './components';
 import LoaderScreen from './components/LoaderScreen';
 
-const PlayersList = lazy(() => import('./components/PlayersList'));
-const FavoritesList = lazy(() => import('./components/FavoritesList'));
+const PlayersList = lazy(() => import('./components/PlayersListContainer'));
+const FavoritesList = lazy(() => import('./components/FavoritesListContainer'));
 
 
 const App = () => {

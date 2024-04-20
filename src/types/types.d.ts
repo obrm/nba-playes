@@ -57,6 +57,10 @@ export type TextInputProps = {
 	placeholder: string;
 };
 
+export type TitleProps = {
+	title: string;
+};
+
 export type ToggleFavoritesButtonProps = {
 	text: string;
 };
