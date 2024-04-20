@@ -2,7 +2,8 @@ import {
   createContext,
   useState,
   useEffect,
-  useCallback
+  useCallback,
+  useMemo
 } from 'react';
 import axios from 'axios';
 import debounce from 'lodash/debounce';
@@ -86,8 +87,18 @@ export const PlayersProvider: React.FC<ProviderProps> = ({ children }) => {
     }
   };
 
+  const providerValue = useMemo(() => ({
+    players,
+    loading,
+    error,
+    search,
+    setSearch,
+    loadMorePlayers,
+    hasMore
+  }), [players, loading, error, search, setSearch, loadMorePlayers, hasMore]);
+
   return (
-    <PlayersContext.Provider value={{ players, loading, error, search, setSearch, loadMorePlayers, hasMore }}>
+    <PlayersContext.Provider value={providerValue}>
       {children}
     </PlayersContext.Provider>
   );
