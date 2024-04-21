@@ -1,4 +1,5 @@
 import { useGlobalFavoriteContext, useGlobalThemeContext } from '../../hooks';
+
 import { Title, FavoritesList, ToggleFavoritesBtn, ThemeSwitchBtn } from '..';
 
 const FavoritesListContainer = () => {

@@ -13,7 +13,6 @@ export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
       return [];
     }
   });
-
   const [showFavorites, setShowFavorites] = useState(false);
 
   useEffect(() => {
@@ -34,14 +33,16 @@ export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
 
   const providerValue = useMemo(() => ({
     favorites,
-    showFavorites,
-    addToFavorites,
-    removeFromFavorites,
-    toggleShowFavorites
+    showFavorites
   }), [favorites, showFavorites]);
 
   return (
-    <FavoriteContext.Provider value={providerValue}>
+    <FavoriteContext.Provider value={{
+      ...providerValue,
+      addToFavorites,
+      removeFromFavorites,
+      toggleShowFavorites
+    }}>
       {children}
     </FavoriteContext.Provider>
   );
