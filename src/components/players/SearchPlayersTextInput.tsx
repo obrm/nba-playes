@@ -1,7 +1,7 @@
 import { useGlobalPlayersContext } from '../../hooks';
-import { TextInputProps } from '../../types/interfaces';
+import { ITextInputProps } from '../../types/interfaces';
 
-const SearchPlayersTextInput: React.FC<TextInputProps> = () => {
+const SearchPlayersTextInput: React.FC<ITextInputProps> = () => {
   const { search, setSearch } = useGlobalPlayersContext();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

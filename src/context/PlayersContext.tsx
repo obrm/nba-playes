@@ -10,16 +10,16 @@ import debounce from 'lodash/debounce';
 import { toast } from 'react-toastify';
 
 import {
-  ApiResponse,
-  Player,
-  PlayersContextInterface,
-  ProviderProps
+  IApiResponse,
+  IPlayer,
+  IPlayersContext,
+  IProviderProps
 } from '../types/interfaces';
 
-const PlayersContext = createContext<PlayersContextInterface | undefined>(undefined);
+const PlayersContext = createContext<IPlayersContext | undefined>(undefined);
 
-export const PlayersProvider: React.FC<ProviderProps> = ({ children }) => {
-  const [players, setPlayers] = useState<Player[]>([]);
+export const PlayersProvider: React.FC<IProviderProps> = ({ children }) => {
+  const [players, setPlayers] = useState<IPlayer[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
   const [search, setSearch] = useState<string>('');
@@ -30,7 +30,7 @@ export const PlayersProvider: React.FC<ProviderProps> = ({ children }) => {
     setError(false);
 
     try {
-      const response = await axios.get<ApiResponse>(`${import.meta.env.VITE_API_URL}/players`, {
+      const response = await axios.get<IApiResponse>(`${import.meta.env.VITE_API_URL}/players`, {
         params: {
           search: searchQuery,
           cursor: page

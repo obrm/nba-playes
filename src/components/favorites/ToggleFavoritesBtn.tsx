@@ -1,7 +1,7 @@
 import { useGlobalFavoriteContext } from '../../hooks';
-import { ToggleFavoritesButtonProps } from '../../types/interfaces';
+import { IToggleFavoritesButtonProps } from '../../types/interfaces';
 
-const ToggleFavoritesBtn: React.FC<ToggleFavoritesButtonProps> = ({ text }) => {
+const ToggleFavoritesBtn: React.FC<IToggleFavoritesButtonProps> = ({ text }) => {
   const { toggleShowFavorites } = useGlobalFavoriteContext();
 
   return (
