@@ -27,9 +27,9 @@ const App = () => {
 
   useEffect(() => {
     if (isDarkTheme && isMobile && showFavorites) {
-      document.body.classList.add('favorites-dark');
+      document.body.classList.add('dark');
     } else {
-      document.body.classList.remove('favorites-dark');
+      document.body.classList.remove('dark');
     }
   }, [isDarkTheme, isMobile, showFavorites]);
 
