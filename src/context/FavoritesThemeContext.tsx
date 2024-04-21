@@ -1,9 +1,9 @@
 import React, { createContext, useState, useEffect, useMemo, useCallback } from 'react';
-import { IProviderProps, IFavoritesThemeContext } from '../types/interfaces';
+import { ProviderProps, FavoritesThemeContextInterface } from '../types/interfaces';
 
-const FavoritesThemeContext = createContext<IFavoritesThemeContext | undefined>(undefined);
+const FavoritesThemeContext = createContext<FavoritesThemeContextInterface | undefined>(undefined);
 
-export const FavoritesThemeProvider: React.FC<IProviderProps> = ({ children }) => {
+export const FavoritesThemeProvider: React.FC<ProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<string>(() => localStorage.getItem('favoritesListTheme') || 'light');
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(() => localStorage.getItem('favoritesListIsDark') === 'true');
 

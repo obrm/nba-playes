@@ -1,9 +1,9 @@
 import React from 'react';
 import { IoHeart, IoHeartOutline } from 'react-icons/io5';
 import { useGlobalFavoriteContext } from '../../hooks';
-import { IToggleFavoriteBtnProps } from '../../types/interfaces';
+import { ToggleFavoriteBtnProps } from '../../types/interfaces';
 
-const ToggleFavoriteBtn: React.FC<IToggleFavoriteBtnProps> = ({ player }) => {
+const ToggleFavoriteBtn: React.FC<ToggleFavoriteBtnProps> = ({ player }) => {
   const { favorites, addToFavorites, removeFromFavorites } = useGlobalFavoriteContext();
 
   const isFavorite = (playerId: number) => favorites.some(item => item.id === playerId)

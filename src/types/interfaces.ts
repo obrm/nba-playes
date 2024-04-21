@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface IPlayer {
+export interface Player {
 	id: number;
 	first_name: string;
 	last_name: string;
@@ -9,20 +9,20 @@ export interface IPlayer {
 	};
 }
 
-export interface IFavoriteContext {
-	favorites: IPlayer[];
+export interface FavoriteContextInterface {
+	favorites: Player[];
 	showFavorites: boolean;
-	addToFavorites: (player: IPlayer) => void;
+	addToFavorites: (player: Player) => void;
 	removeFromFavorites: (playerId: number) => void;
 	toggleShowFavorites: () => void;
 }
 
-export interface IProviderProps {
+export interface ProviderProps {
 	children: ReactNode;
 }
 
-export interface IPlayersContext {
-	players: IPlayer[];
+export interface PlayersContextInterface {
+	players: Player[];
 	loading: boolean;
 	error: boolean;
 	search: string;
@@ -31,40 +31,40 @@ export interface IPlayersContext {
 	loadMorePlayers: () => void;
 }
 
-export interface IFavoritesThemeContext {
+export interface FavoritesThemeContextInterface {
 	theme: string;
 	isDarkTheme: boolean;
 	toggleTheme: () => void;
 }
 
-export interface IMeta {
+export interface Meta {
 	next_cursor: number | null;
 	per_page: number;
 }
 
-export interface IApiResponse {
-	data: IPlayer[];
-	meta: IMeta;
+export interface ApiResponse {
+	data: Player[];
+	meta: Meta;
 }
 
-export interface IPlayerItemProps {
-	player: IPlayer;
+export interface PlayerItemProps {
+	player: Player;
 	isDarkTheme?: boolean;
 	theme?: string;
 }
 
-export interface ITextInputProps {
+export interface TextInputProps {
 	placeholder: string;
 }
 
-export interface ITitleProps {
+export interface TitleProps {
 	title: string;
 }
 
-export interface IToggleFavoriteBtnProps {
-	player: IPlayer;
+export interface ToggleFavoriteBtnProps {
+	player: Player;
 }
 
-export interface IToggleFavoritesButtonProps {
+export interface ToggleFavoritesButtonProps {
 	text: string;
 };

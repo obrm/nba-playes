@@ -1,10 +1,10 @@
 import React, { createContext, useState, useEffect, useCallback, useMemo } from 'react';
-import { IFavoriteContext, IPlayer, IProviderProps } from '../types/interfaces';
+import { FavoriteContextInterface, Player, ProviderProps } from '../types/interfaces';
 
-const FavoriteContext = createContext<IFavoriteContext | undefined>(undefined);
+const FavoriteContext = createContext<FavoriteContextInterface | undefined>(undefined);
 
-export const FavoriteProvider: React.FC<IProviderProps> = ({ children }) => {
-  const [favorites, setFavorites] = useState<IPlayer[]>(() => {
+export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
+  const [favorites, setFavorites] = useState<Player[]>(() => {
     const storedFavorites = localStorage.getItem('favorites');
     try {
       return storedFavorites ? JSON.parse(storedFavorites) : [];
@@ -19,7 +19,7 @@ export const FavoriteProvider: React.FC<IProviderProps> = ({ children }) => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  const addToFavorites = useCallback((player: IPlayer) => {
+  const addToFavorites = useCallback((player: Player) => {
     setFavorites((prevFavorites) => [...prevFavorites, player]);
   }, []);
 
