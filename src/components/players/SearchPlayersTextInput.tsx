@@ -1,5 +1,5 @@
 import { useGlobalPlayersContext } from '../../hooks';
-import { TextInputProps } from '../../types/types';
+import { TextInputProps } from '../../types/interfaces';
 
 const SearchPlayersTextInput: React.FC<TextInputProps> = () => {
   const { search, setSearch } = useGlobalPlayersContext();

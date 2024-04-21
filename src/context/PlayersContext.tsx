@@ -12,11 +12,11 @@ import { toast } from 'react-toastify';
 import {
   ApiResponse,
   Player,
-  PlayersContextType,
+  PlayersContextInterface,
   ProviderProps
-} from '../types/types';
+} from '../types/interfaces';
 
-const PlayersContext = createContext<PlayersContextType | undefined>(undefined);
+const PlayersContext = createContext<PlayersContextInterface | undefined>(undefined);
 
 export const PlayersProvider: React.FC<ProviderProps> = ({ children }) => {
   const [players, setPlayers] = useState<Player[]>([]);

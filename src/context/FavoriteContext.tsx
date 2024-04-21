@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, useCallback, useMemo } from 'react';
-import { FavoriteContextType, Player, ProviderProps } from '../types/types';
+import { FavoriteContextInterface, Player, ProviderProps } from '../types/interfaces';
 
-const FavoriteContext = createContext<FavoriteContextType | undefined>(undefined);
+const FavoriteContext = createContext<FavoriteContextInterface | undefined>(undefined);
 
 export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
   const [favorites, setFavorites] = useState<Player[]>(() => {

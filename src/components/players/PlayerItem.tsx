@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PlayerItemProps } from '../../types/types';
+import { PlayerItemProps } from '../../types/interfaces';
 import { ToggleFavoriteBtn } from '..'
 
 const PlayerItem: React.FC<PlayerItemProps> = ({ player, isDarkTheme, theme }) => {

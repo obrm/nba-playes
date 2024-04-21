@@ -1,4 +1,4 @@
-import { TitleProps } from '../../types/types';
+import { TitleProps } from '../../types/interfaces';
 
 const Title: React.FC<TitleProps> = ({ title }) => {
   return (

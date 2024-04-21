@@ -1,27 +1,27 @@
 import { ReactNode } from 'react';
 
-export type Player = {
+export interface Player {
 	id: number;
 	first_name: string;
 	last_name: string;
 	team: {
 		full_name: string;
 	};
-};
+}
 
-export type FavoriteContextType = {
+export interface FavoriteContextInterface {
 	favorites: Player[];
 	showFavorites: boolean;
 	addToFavorites: (player: Player) => void;
 	removeFromFavorites: (playerId: number) => void;
 	toggleShowFavorites: () => void;
-};
+}
 
-export type ProviderProps = {
+export interface ProviderProps {
 	children: ReactNode;
-};
+}
 
-export type PlayersContextType = {
+export interface PlayersContextInterface {
 	players: Player[];
 	loading: boolean;
 	error: boolean;
@@ -29,42 +29,42 @@ export type PlayersContextType = {
 	hasMore: boolean;
 	setSearch: React.Dispatch<React.SetStateAction<string>>;
 	loadMorePlayers: () => void;
-};
+}
 
-export type FavoritesThemeContextType = {
+export interface FavoritesThemeContextInterface {
 	theme: string;
 	isDarkTheme: boolean;
 	toggleTheme: () => void;
-};
+}
 
-export type Meta = {
+export interface Meta {
 	next_cursor: number | null;
 	per_page: number;
-};
+}
 
-export type ApiResponse = {
+export interface ApiResponse {
 	data: Player[];
 	meta: Meta;
-};
+}
 
-export type PlayerItemProps = {
+export interface PlayerItemProps {
 	player: Player;
 	isDarkTheme?: boolean;
 	theme?: string;
-};
+}
 
-export type TextInputProps = {
+export interface TextInputProps {
 	placeholder: string;
-};
+}
 
-export type TitleProps = {
+export interface TitleProps {
 	title: string;
-};
+}
 
-export type ToggleFavoriteBtnProps = {
+export interface ToggleFavoriteBtnProps {
 	player: Player;
-};
+}
 
-export type ToggleFavoritesButtonProps = {
+export interface ToggleFavoritesButtonProps {
 	text: string;
 };

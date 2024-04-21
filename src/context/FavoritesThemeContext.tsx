@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, useMemo, useCallback } from 'react';
-import { ProviderProps, FavoritesThemeContextType } from '../types/types';
+import { ProviderProps, FavoritesThemeContextInterface } from '../types/interfaces';
 
-const FavoritesThemeContext = createContext<FavoritesThemeContextType | undefined>(undefined);
+const FavoritesThemeContext = createContext<FavoritesThemeContextInterface | undefined>(undefined);
 
 export const FavoritesThemeProvider: React.FC<ProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<string>(() => localStorage.getItem('favoritesListTheme') || 'light');

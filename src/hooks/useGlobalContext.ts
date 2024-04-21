@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 
-import type { FavoriteContextType, FavoritesThemeContextType, PlayersContextType } from '../types/types.d.ts';
+import type { FavoriteContextInterface, FavoritesThemeContextInterface, PlayersContextInterface } from '../types/interfaces';
 import { FavoriteContext, PlayersContext, FavoritesThemeContext } from '../context';
 
-export const useGlobalFavoriteContext = (): FavoriteContextType => {
+export const useGlobalFavoriteContext = (): FavoriteContextInterface => {
 	const context = useContext(FavoriteContext);
 	if (!context) {
 		throw new Error('useGlobalFavoriteContext must be used within a FavoriteProvider');
@@ -11,7 +11,7 @@ export const useGlobalFavoriteContext = (): FavoriteContextType => {
 	return context;
 };
 
-export const useGlobalPlayersContext = (): PlayersContextType => {
+export const useGlobalPlayersContext = (): PlayersContextInterface => {
 	const context = useContext(PlayersContext);
 	if (!context) {
 		throw new Error('useGlobalPlayersContext must be used within a PlayersProvider');
@@ -19,7 +19,7 @@ export const useGlobalPlayersContext = (): PlayersContextType => {
 	return context;
 };
 
-export const useGlobalThemeContext = (): FavoritesThemeContextType => {
+export const useGlobalThemeContext = (): FavoritesThemeContextInterface => {
 	const context = useContext(FavoritesThemeContext);
 	if (!context) {
 		throw new Error('useGlobalThemeContext must be used within a FavoritesThemeProvider');
