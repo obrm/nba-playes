@@ -1,12 +1,14 @@
 import { ReactNode } from 'react';
 
+export interface Team {
+	full_name: string;
+}
+
 export interface Player {
 	id: number;
 	first_name: string;
 	last_name: string;
-	team: {
-		full_name: string;
-	};
+	team: Team;
 }
 
 export interface FavoriteContextInterface {
