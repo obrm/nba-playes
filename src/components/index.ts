@@ -11,4 +11,5 @@ export { default as Navbar } from './layout/Navbar';
 export { default as Logo } from './layout/Logo';
 export { default as PlayerItem } from './players/PlayerItem';
 export { default as Loader } from './ui/Loader';
+export { default as LoaderScreen } from './ui/LoaderScreen';
 export { default as ToggleFavoritesBtn } from './favorites/ToggleFavoritesBtn';

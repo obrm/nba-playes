@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, useCallback, useMemo } from 'react';
+import { toast } from 'react-toastify';
 import { FavoriteContextInterface, Player, ProviderProps } from '../types/interfaces';
 
 const FavoriteContext = createContext<FavoriteContextInterface | undefined>(undefined);
@@ -9,6 +10,9 @@ export const FavoriteProvider: React.FC<ProviderProps> = ({ children }) => {
     try {
       return storedFavorites ? JSON.parse(storedFavorites) : [];
     } catch (error) {
+      toast.error('Failed to parse favorites from localStorage', {
+        position: "top-center"
+      })
       console.error('Failed to parse favorites from localStorage:', error);
       return [];
     }

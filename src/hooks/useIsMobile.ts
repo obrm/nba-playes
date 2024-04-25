@@ -10,6 +10,7 @@ function useIsMobile(maxWidth: number = 767): boolean {
 		}, 100);
 
 		window.addEventListener('resize', handleResize);
+
 		return () => {
 			handleResize.cancel();
 			window.removeEventListener('resize', handleResize);

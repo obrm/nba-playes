@@ -10,9 +10,9 @@ import {
 
 import {
   Navbar,
-  Loader
+  Loader,
+  LoaderScreen
 } from './components';
-import LoaderScreen from './components/ui/LoaderScreen';
 
 const PlayersList = lazy(() => import('./components/players/PlayersListContainer'));
 const FavoritesList = lazy(() => import('./components/favorites/FavoritesListContainer'));
